@@ -7,7 +7,7 @@ const path = require('path')
 const fs = require("fs");
 const fastCsv = require("fast-csv");
 const { addDoc, collection } = require('firebase/firestore')
-const { db } = require('./firebase.config')
+const { db } = require('../firebase.config')
 
 
 //use express static folder
@@ -122,6 +122,9 @@ app.post('/uploadfile', upload.single("file"), (req, res, next) =>{
   
 });
 
+
+module.exports = app;
+
 //create connection
-const PORT = process.env.PORT || 3001
-app.listen(PORT, () => console.log(`Server is running at port ${PORT}`))
+// const PORT = process.env.PORT || 3001
+// app.listen(PORT, () => console.log(`Server is running at port ${PORT}`))
